@@ -41,7 +41,7 @@
     <beans:bean
             class="com.spring.darle.service.BoardServiceImpl" id="boardService"/>
     <beans:bean
-            class="com.spring.darle.service.MemberServiceImpl" id="memberService" />
+            class="com.spring.darle.service.MemberServiceImpl" id="memberService"/>
 
     <context:component-scan
             base-package="com.spring.darle"/>
@@ -53,19 +53,23 @@
 
     <!-- Interceptor 설정 -->
     <interceptors>
-    	<interceptor>
-    		<mapping path="/**"/>
-    		<exclude-mapping path="/resources/**"/>
-        <exclude-mapping path="/"/>
-        <exclude-mapping path="/join"/>
-        <exclude-mapping path="/login"/>
-        <exclude-mapping path="/notice"/>
-          <exclude-mapping path="/product"/>
-    		<beans:ref bean="loginInterceptor"/>
-    	</interceptor>
+        <interceptor>
+            <mapping path="/**"/>
+            <exclude-mapping path="/resources/**"/>
+            <exclude-mapping path="/"/>
+            <exclude-mapping path="/join"/>
+            <exclude-mapping path="/login"/>
+            <exclude-mapping path="/notice"/>
+            <exclude-mapping path="/product"/>
+            <beans:ref bean="loginInterceptor"/>
+        </interceptor>
     </interceptors>
 
     <!-- multipartResolver -->
     <beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <beans:property name="maxUploadSize" value="-1"/>
+        <beans:property name="maxInMemorySize" value="-1"/>
+        <beans:property name="uploadTempDir" value="resources/image/images"/>
+        <beans:property name="defaultEncoding" value="utf-8"/>
     </beans:bean>
 </beans:beans>
