@@ -11,8 +11,14 @@
 	<div class="write bsize">
 		<section class="write-content">
 			<h1>게시판</h1>
-			<form name="boardForm" action="boardWrite" method="post">
+			<form name="boardForm" action="boardWrite" method="post" enctype="multipart/form-data">
 				<table class="board_write">
+					<tr>
+						<th>카테고리</th>
+						<td><select name="category">
+							<option value="notice">공지사항</option>
+						</select></td>
+					</tr>
 					<tr>
 						<th>제목</th>
 						<td><input type="text" name="title" id="title"></td>
@@ -22,10 +28,8 @@
 						<td><textarea name="detail"></textarea></td>
 					</tr>
 					<tr>
-						<th>카테고리</th>
-						<td><select name="category">
-								<option value="notice">공지사항</option>
-						</select></td>
+						<th>첨부파일</th>
+						<th><input type="file" name="file"></th>
 					</tr>
 					<tr>
 						<td colspan="2">
