@@ -35,6 +35,26 @@
 		<constructor-arg index="0" ref="sqlSessionFactory" />
 	</bean>
 
-	<!-- fileUpload 생성 -->
-	<bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver" />
+	<!-- Dao 객체 생성 -->
+	<bean class="com.spring.darle.dao.BoardDao" id="boardDao"/>
+	<bean class="com.spring.darle.dao.MemberDao" id="memberDao"/>
+	<bean class="com.spring.darle.dao.AdminDao" id="adminDao"/>
+
+	<!-- Dto 객체 생성-->
+	<bean class="com.spring.darle.dto.MemberDto" id="memberDto"/>
+	<bean class="com.spring.darle.dto.BoardDto" id="boardDto"/>
+	<bean class="com.spring.darle.dto.ProductDto" id="productDto"/>
+
+	<!-- Service 객체 생성 -->
+	<bean class="com.spring.darle.service.BoardServiceImpl" id="boardService"/>
+	<bean class="com.spring.darle.service.MemberServiceImpl" id="memberService"/>
+	<bean class="com.spring.darle.service.AdminServiceImpl" id="adminService"/>
+
+	<!-- multipartResolver -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="-1"/>
+		<property name="maxInMemorySize" value="-1"/>
+		<property name="defaultEncoding" value="utf-8"/>
+	</bean>
+
 </beans>
