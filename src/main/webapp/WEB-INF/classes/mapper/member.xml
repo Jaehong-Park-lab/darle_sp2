@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.member">
+  <!--회원가입-->
+  <insert id="join" parameterType="com.spring.darle.dto.BoardDto">
+    insert into user (ID, PASS, USER_NAME, HP_NUM, EMAIL, GRADE, ADDRESS)
+    VALUES (#{id}, #{pass}, #{name}, '1234', #{email}, #{grade}, #{address})
+  </insert>
+  <!--로그인-->
+  <select id="login" resultType="com.spring.darle.dto.MemberDto">
+    select ID, PASS, USER_NAME
+    from user
+    where ID = #{id}
+      AND PASS = #{pass}
+  </select>
+</mapper>
