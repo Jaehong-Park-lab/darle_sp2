@@ -1,7 +1,7 @@
 package com.spring.darle.service;
 
 import com.spring.darle.dao.AdminDao;
-import com.spring.darle.dto.ProductDto;
+import com.spring.darle.dto.product.ProductDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

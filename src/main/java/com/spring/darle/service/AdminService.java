@@ -1,6 +1,6 @@
 package com.spring.darle.service;
 
-import com.spring.darle.dto.ProductDto;
+import com.spring.darle.dto.product.ProductDto;
 
 public interface AdminService {
 

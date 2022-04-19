@@ -1,6 +1,6 @@
 package com.spring.darle.controller;
 
-import com.spring.darle.dto.ProductDto;
+import com.spring.darle.dto.product.ProductDto;
 import com.spring.darle.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
