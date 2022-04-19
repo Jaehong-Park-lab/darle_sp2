@@ -1,8 +1,10 @@
 package com.spring.darle.dto;
 
 import lombok.Data;
+import org.springframework.stereotype.Component;
 
 @Data
+@Component
 public class ProductDto {
 
   int pnum, size_number, cnum, product_amount, inum;

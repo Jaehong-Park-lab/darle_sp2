@@ -22,6 +22,12 @@
     FROM board
   </select>
 
+  <select id="mainNoticeList" resultType="com.spring.darle.dto.BoardDto">
+    SELECT title
+    FROM board
+    WHERE category = 'notice'
+  </select>
+
   <select id="getTotalCount" resultType="int">
     SELECT COUNT(*)
     FROM board

@@ -17,14 +17,14 @@ public class BoardDao {
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 
-	private static String namespace = "mapper.board";
+	private static String nameSpace = "mapper.board";
 
 	/**
 	 * 글쓰기
 	 */
 	public int insert(BoardDto dto) {
 
-		return sqlSession.insert(namespace + ".write", dto);
+		return sqlSession.insert(nameSpace + ".write", dto);
 	}
 
 	/**
@@ -32,7 +32,7 @@ public class BoardDao {
 	 */
 	public void delete(int page_number) {
 
-		sqlSession.delete(namespace + ".delete", page_number);
+		sqlSession.delete(nameSpace + ".delete", page_number);
 	}
 
 	/**
@@ -41,7 +41,7 @@ public class BoardDao {
 	public List<Map<String, Object>> select() {
 		List<Map<String, Object>> selectList = new ArrayList<>();
 
-		return sqlSession.selectList(namespace + ".select");
+		return sqlSession.selectList(nameSpace + ".select");
 	}
 
 	/**
@@ -49,32 +49,32 @@ public class BoardDao {
 	 */
 	public int getTotalCount() {
 
-		return sqlSession.selectOne(namespace + ".getTotalCount");
+		return sqlSession.selectOne(nameSpace + ".getTotalCount");
 	}
 
 
 	public List<Map<String, Object>> selectBoard(PagingVo vo) {
 
-		return sqlSession.selectList(namespace + ".countBoard");
+		return sqlSession.selectList(nameSpace + ".countBoard");
 	}
 
 	public List<Map<String, BoardDto>> getBoardList(PagingVo vo) {
 
-		return sqlSession.selectList(namespace + ".selectBoard", vo);
+		return sqlSession.selectList(nameSpace + ".selectBoard", vo);
 	}
 
 	public BoardDto getBoardContent(int page_number) {
 
-		return sqlSession.selectOne(namespace + ".getBoardContent", page_number);
+		return sqlSession.selectOne(nameSpace + ".getBoardContent", page_number);
 	}
 
 	public void boardUpdate(BoardDto dto) {
 
-		sqlSession.update(namespace + ".boardUpdate", dto);
+		sqlSession.update(nameSpace + ".boardUpdate", dto);
 	}
 
 	public List<Map<String, BoardDto>> getSearch(Map map) {
-		System.out.println(sqlSession.selectList(namespace + ".search", map));
-		return sqlSession.selectList(namespace + ".search", map);
+		System.out.println(sqlSession.selectList(nameSpace + ".search", map));
+		return sqlSession.selectList(nameSpace + ".search", map);
 	}
 }

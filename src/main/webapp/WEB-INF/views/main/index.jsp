@@ -33,11 +33,9 @@
           <!--INDEX 공지사항 CONTENT-->
           <div class="ind-notice">
             <ul>
-              <li>공지사항 글 th:if 로 반복</li>
-              <li>공지사항 글은 5개만 나오게</li>
-              <li>공지사항 글 th:if 로 반복</li>
-              <li>공지사항 글 th:if 로 반복</li>
-              <li>공지사항 글 th:if 로 반복</li>
+              <c:forEach var="nList" items="${noticeList}" begin="1" end="5">
+              <li>${nList.title}</li>
+              </c:forEach>
             </ul>
           </div>
         </div>
