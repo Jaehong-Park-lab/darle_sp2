@@ -11,7 +11,7 @@
 <div class="write bsize">
   <section class="write-content">
     <h1>제품등록페이지</h1>
-    <form name="boardForm" action="admin/productRegistration" method="post">
+    <form name="boardForm" action="/admin/productRegistration" method="post">
       <table class="board_write">
         <tr>
           <th>카테고리</th>
@@ -52,8 +52,7 @@
         <input type="file">
         <tr>
           <td colspan="2">
-            <button type="submit" class="btn_style3"
-                    onclick="boardFormCheck()">등록완료
+            <button type="submit" class="btn_style3">등록완료
             </button>
             <button type="reset" class="btn_style3">다시쓰기</button>
             <a href="board">

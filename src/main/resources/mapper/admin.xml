@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.admin">
+
+  <insert id="productInsert" parameterType="com.spring.darle.dto.product.ProductDto">
+    INSERT INTO product values (#{product_number}, #{product_name}, #{price}, null, #{product_amount})
+  </insert>
+
+  <insert id="colorInsert" parameterType="com.spring.darle.dto.product.ColorDto">
+    INSERT INTO color values (#{color}, #{product_number}, null)
+  </insert>
+
+  <insert id="sizeInsert" parameterType="com.spring.darle.dto.product.SizeDto">
+    INSERT INTO size values (#{size}, #{product_number}, null)
+  </insert>
+</mapper>

@@ -1,7 +1,9 @@
 package com.spring.darle.service;
 
 import com.spring.darle.dao.AdminDao;
+import com.spring.darle.dto.product.ColorDto;
 import com.spring.darle.dto.product.ProductDto;
+import com.spring.darle.dto.product.SizeDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,12 +19,12 @@ public class AdminServiceImpl implements AdminService {
   }
 
   @Override
-  public void color(ProductDto pDto) {
-    adminDao.insertColor(pDto);
+  public void color(ColorDto cDto) {
+    adminDao.insertColor(cDto);
   }
 
   @Override
-  public void size(ProductDto pDto) {
-    adminDao.insertSize(pDto);
+  public void size(SizeDto sDto) {
+    adminDao.insertSize(sDto);
   }
 }
