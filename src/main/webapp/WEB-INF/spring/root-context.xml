@@ -35,24 +35,11 @@
 		<constructor-arg index="0" ref="sqlSessionFactory" />
 	</bean>
 
-	<context:component-scan base-package="com.spring.darle.dao"/>
-	<context:component-scan base-package="com.spring.darle.service"/>
-	<context:component-scan base-package="com.spring.darle.dto"/>
-
-<!--	&lt;!&ndash; Dao 객체 생성 &ndash;&gt;-->
-<!--	<bean class="com.spring.darle.dao.BoardDao" id="boardDao"/>-->
-<!--	<bean class="com.spring.darle.dao.MemberDao" id="memberDao"/>-->
-<!--	<bean class="com.spring.darle.dao.AdminDao" id="adminDao"/>-->
-
-<!--	&lt;!&ndash; Dto 객체 생성&ndash;&gt;-->
-<!--	<bean class="com.spring.darle.dto.MemberDto" id="memberDto"/>-->
-<!--	<bean class="com.spring.darle.dto.BoardDto" id="boardDto"/>-->
-<!--	<bean class="com.spring.darle.dto.ProductDto" id="productDto"/>-->
-
-<!--	&lt;!&ndash; Service 객체 생성 &ndash;&gt;-->
-<!--	<bean class="com.spring.darle.service.BoardServiceImpl" id="boardService"/>-->
-<!--	<bean class="com.spring.darle.service.MemberServiceImpl" id="memberService"/>-->
-<!--	<bean class="com.spring.darle.service.AdminServiceImpl" id="adminService"/>-->
+	<!-- 빈 등록 (component-scan) -->
+	<context:component-scan base-package="com.spring.darle"/>
+<!--	<context:component-scan base-package="com.spring.darle.dao"/>-->
+<!--	<context:component-scan base-package="com.spring.darle.service"/>-->
+<!--	<context:component-scan base-package="com.spring.darle.dto"/>-->
 
 	<!-- multipartResolver -->
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

@@ -1,5 +1,7 @@
 package com.spring.darle.controller;
 
+import com.spring.darle.dto.ProductDto;
+import com.spring.darle.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class AdminController {
 
   @Autowired
-
+  private AdminService adminService;
 
   @GetMapping("admin/productRegistration")
   public String getProductRegistration() {
@@ -18,9 +20,11 @@ public class AdminController {
   }
 
   @PostMapping("admin/productRegistration")
-  public String writeProductRegistration() {
+  public String writeProductRegistration(ProductDto pDto) {
 
-
+    adminService.basic(pDto);
+    adminService.color(pDto);
+    adminService.size(pDto);
 
     return "redirect:/admin/productRegistration";
   }
