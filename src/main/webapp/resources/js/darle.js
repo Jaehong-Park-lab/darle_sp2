@@ -106,3 +106,5 @@ function categoryChange(e) {
     target.appendChild(opt);
   }
 }
+
+/*(+) 누르면 입력창 추가*/
