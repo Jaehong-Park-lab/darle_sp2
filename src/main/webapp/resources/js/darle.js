@@ -86,4 +86,23 @@ function login_result(result){
   }
 }
 
-/* git test*/
+/*카테고리 두개 선택*/
+function categoryChange(e) {
+  var top = ["스웨터", "T-shirt"];
+  var mans_clothes = ["스웨터", "T-shirt"];
+  var bottom = ["skirt", "pants"];
+  var target = document.getElementById("clothes_sub_category")
+
+  if (e.value == "top") var d = top;
+  else if (e.value == "mans_clothes") var d = mans_clothes;
+  else if (e.value == "bottom") var d = bottom;
+
+  target.options.length = 0;
+
+  for (x in d) {
+    var opt = document.createElement("option");
+    opt.value = d[x];
+    opt.innerHTML = d[x];
+    target.appendChild(opt);
+  }
+}

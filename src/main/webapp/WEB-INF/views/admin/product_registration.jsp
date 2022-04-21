@@ -6,6 +6,7 @@
   <title>제품등록페이지</title>
   <link rel="shortcut icon" href="#">
   <link rel="stylesheet" type="text/css" href="/resources/css/darle.css">
+  <script src="/resources/js/darle.js"></script>
 </head>
 <body>
 <div class="write bsize">
@@ -17,6 +18,20 @@
           <th>카테고리</th>
           <td><select name="category">
             <option value="notice">공지사항</option>
+          </select></td>
+        </tr>
+        <tr>
+          <th>카테고리</th>
+          <td><select name="clothes_main_category" id="clothes_main_category" onchange="categoryChange(this)">
+            <option value="bottom">바지</option>
+            <option value="top">상의</option>
+            <option value="mans_clothes">남성의류</option>
+          </select></td>
+        </tr>
+        <tr>
+          <th>카테고리</th>
+          <td><select name="clothes_sub_category" id="clothes_sub_category">
+            <option>선택해주세요</option>
           </select></td>
         </tr>
         <tr>
