@@ -75,6 +75,7 @@ public class BoardDao {
 
 	public List<Map<String, BoardDto>> getSearch(Map map) {
 		System.out.println(sqlSession.selectList(nameSpace + ".search", map));
+
 		return sqlSession.selectList(nameSpace + ".search", map);
 	}
 }

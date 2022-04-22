@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 @Repository
 public class AdminDao {
@@ -22,7 +23,13 @@ public class AdminDao {
     sqlSession.insert(nameSpace + ".productInsert", pDto);
   }
 
-  public void insertColor(ColorDto cDto) {
+  public void insertColor(ColorDto cDto, String[] colors) {
+
+//    for (String color : colors) {
+//      cDto.setColor(color);
+//      sqlSession.insert(nameSpace + ".colorInsert", cDto);
+//    }
+
     sqlSession.insert(nameSpace + ".colorInsert", cDto);
   }
 

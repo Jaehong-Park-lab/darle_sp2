@@ -6,6 +6,7 @@
 
 <mapper namespace="mapper.admin">
 
+  <!--제품 등록 -->
   <insert id="productInsert" parameterType="com.spring.darle.dto.product.ProductDto">
     INSERT INTO product values (#{product_number}, #{product_name}, #{price}, null, #{product_amount})
   </insert>
@@ -17,4 +18,6 @@
   <insert id="sizeInsert" parameterType="com.spring.darle.dto.product.SizeDto">
     INSERT INTO size values (#{size}, #{product_number}, null)
   </insert>
+
+
 </mapper>

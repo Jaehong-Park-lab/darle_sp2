@@ -6,6 +6,8 @@
   <title>제품등록페이지</title>
   <link rel="shortcut icon" href="#">
   <link rel="stylesheet" type="text/css" href="/resources/css/darle.css">
+  <script src="/resources/js/darle.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 </head>
 <body>
 <div class="write bsize">
@@ -17,6 +19,20 @@
           <th>카테고리</th>
           <td><select name="category">
             <option value="notice">공지사항</option>
+          </select></td>
+        </tr>
+        <tr>
+          <th>카테고리</th>
+          <td><select name="clothes_main_category" id="clothes_main_category" onchange="categoryChange(this)">
+            <option value="bottom">바지</option>
+            <option value="top">상의</option>
+            <option value="mans_clothes">남성의류</option>
+          </select></td>
+        </tr>
+        <tr>
+          <th>카테고리</th>
+          <td><select name="clothes_sub_category" id="clothes_sub_category">
+            <option>선택해주세요</option>
           </select></td>
         </tr>
         <tr>
@@ -37,8 +53,18 @@
         </tr>
         <%-- +버튼 만들고 누르면 더 늘어나게 name은 +1 씩 추가 나중에 하나로 합쳐서 color로 전송 --%>
         <tr>
+          <th colspan="2">
+            <button type="button" name="addColor" id="addColor" value="addColor" onclick="addInputText(this)"></button>
+          </th>
+        </tr>
+        <tr>
           <th>색상</th>
-          <td><input type="text" name="color" id="color"></td>
+          <td>
+            <ul id="color-wrap">
+              <li>
+                <input type="text" name="color" id="color">
+              </li>
+            </ul>
         </tr>
         <tr>
           <th>사이즈</th>
@@ -48,7 +74,7 @@
           <th>상품설명</th>
           <td>사진 반복해서 나오게 해놓기</td>
         </tr>
-          <%--파일 여러개 올릴 수 있도록 하기--%>
+        <%--파일 여러개 올릴 수 있도록 하기--%>
         <input type="file">
         <tr>
           <td colspan="2">

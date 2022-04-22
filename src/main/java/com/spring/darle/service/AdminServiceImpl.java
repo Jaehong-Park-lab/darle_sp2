@@ -20,7 +20,11 @@ public class AdminServiceImpl implements AdminService {
 
   @Override
   public void color(ColorDto cDto) {
-    adminDao.insertColor(cDto);
+    String[] colors = cDto.getColor().replaceAll(" ", "").split(",");
+
+    System.out.println(colors);
+
+    adminDao.insertColor(cDto, colors);
   }
 
   @Override

@@ -10,6 +10,7 @@
     insert into user (ID, PASS, USER_NAME, HP_NUM, EMAIL, GRADE, ADDRESS)
     VALUES (#{id}, #{pass}, #{name}, '1234', #{email}, #{grade}, #{address})
   </insert>
+
   <!--로그인-->
   <select id="login" resultType="com.spring.darle.dto.MemberDto">
     select ID, PASS, USER_NAME
