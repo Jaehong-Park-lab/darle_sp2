@@ -52,14 +52,14 @@ public class BoardController {
     map.put("searchOptions", searchOptions);
     try {
       if (map.get("searchData") != null) {
-        System.out.println("searchData : "+map.get("searchData"));
+        System.out.println("searchData : " + map.get("searchData"));
         content = boardService.getSearch(map);
-        System.out.println("content : "+content);
+        System.out.println("content : " + content);
       } else {
         content = boardService.getBoardList(vo);
       }
       System.out.println("model : " + model.toString());
-    }catch (Exception e){
+    } catch (Exception e) {
       e.printStackTrace();
     }
 
@@ -132,7 +132,7 @@ public class BoardController {
    */
   @GetMapping("/boardUpdate")
   public String getBoardUpdate(Model model, BoardDto dto,
-                                @RequestParam(value = "page_number", required = true) int page_number) {
+                               @RequestParam(value = "page_number", required = true) int page_number) {
 
     model.addAttribute("content", boardService.getBoardContent(page_number));
 
@@ -146,6 +146,7 @@ public class BoardController {
 
     return "redirect:/boardContent?" + dto.getPage_number();
   }
+
   /**
    * 게시글 삭제
    */

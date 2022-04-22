@@ -37,12 +37,13 @@ function execDaumPostcode() {
     }).open();
   });
 }
+
 // 약관 동의
-$(document).ready(function () {
-  $('#allAgree').click(function () {
-    $('.ab').prop('checked', this.checked);
-  });
-});
+// $(document).ready(function () {
+//   $('#allAgree').click(function () {
+//     $('.ab').prop('checked', this.checked);
+//   });
+// });
 
 function inNumber() {
   if (event.keyCode < 48 || event.keyCode > 57) {
@@ -50,38 +51,38 @@ function inNumber() {
   }
 }
 
-$('#email-end').change(function () {
-  $("#email-end option:selected").each(function () {
-    if ($(this).val() == '1') {
-      $("#str_email02").val('');
-      $("#str_email02").attr("disabled", false);
-    } else {
-      $("#str_email02").val($(this).text());
-      $("#str_email02").attr("disabled", true);
-    }
-  });
-});
+// $('#email-end').change(function () {
+//   $("#email-end option:selected").each(function () {
+//     if ($(this).val() == '1') {
+//       $("#str_email02").val('');
+//       $("#str_email02").attr("disabled", false);
+//     } else {
+//       $("#str_email02").val($(this).text());
+//       $("#str_email02").attr("disabled", true);
+//     }
+//   });
+// });
 
 /*게시판 글쓰기*/
-function boardFormCheck(){
+function boardFormCheck() {
   let btitle;
   btitle = document.getElementById("btitle");
 
-  if(btitle.value == ""){
+  if (btitle.value == "") {
     alert("제목을 입력해주세요");
     btitle.focus();
     return false;
-  }else{
+  } else {
     boardForm.submit();
   }
 }
 
-function login_result(result){
-  if (result == 'ok'){
+function login_result(result) {
+  if (result == 'ok') {
     alert("로그인에 성공하셨습니다");
   }
 
-  if (result == 'fail'){
+  if (result == 'fail') {
     alert("아이디 또는 패스워드가 정확하지 않습니다. 다시 로그인 해주세요");
   }
 }
@@ -107,7 +108,7 @@ function categoryChange(e) {
   }
 }
 
-/*(+) 누르면 입력창 추가*/
+/*(+) 누르면 입력창 추가 - jquery*/
 // function addInputText() {
 //   // if (e.value == "addColor") {
 //     $("#addColor").on("click", () => {
@@ -120,9 +121,22 @@ function categoryChange(e) {
 //   $(".color-wrap".clone().appendTo(".color"));
 // });
 
-function addInputText() {
-  var parent = document.getElementById('color-wrap');
-  var newTd = document.createElement('td');
-  newTd.innerHTML = "<input type='text' name='color' id='color'>";
-  parent.appendChild(newTd);
+/*(+) 누르면 입력창 추가 - js*/
+function addInputText(e) {
+  if (e.value == "addColor") {
+    var parent = document.getElementById('color-wrap');
+    var newTd = document.createElement('li');
+    newTd.innerHTML = "<input type='text' name='color' id='color'>";
+    parent.appendChild(newTd);
+  }
+}
+
+/*color값 배열로 받기*/
+function multipleColor() {
+  var colorWrap = document.getElementById('color-wrap');
+  var color = $("input[name=color]").length;
+  var colorList = new Array(color);
+  for (var i = 0; i < color; i++) {
+    color[i] = $("input[name=color]").eq("i").val();
+  }
 }

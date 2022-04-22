@@ -54,12 +54,17 @@
         <%-- +버튼 만들고 누르면 더 늘어나게 name은 +1 씩 추가 나중에 하나로 합쳐서 color로 전송 --%>
         <tr>
           <th colspan="2">
-            <button type="button" name="addColor" id="addColor" value="addColor" onclick="addInputText()"></button>
+            <button type="button" name="addColor" id="addColor" value="addColor" onclick="addInputText(this)"></button>
           </th>
         </tr>
-        <tr id="color-wrap">
+        <tr>
           <th>색상</th>
-          <td><input type="text" name="color" id="color"></td>
+          <td>
+            <ul id="color-wrap">
+              <li>
+                <input type="text" name="color" id="color">
+              </li>
+            </ul>
         </tr>
         <tr>
           <th>사이즈</th>
