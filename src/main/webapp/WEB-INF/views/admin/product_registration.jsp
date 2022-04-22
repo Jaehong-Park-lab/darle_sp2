@@ -7,6 +7,7 @@
   <link rel="shortcut icon" href="#">
   <link rel="stylesheet" type="text/css" href="/resources/css/darle.css">
   <script src="/resources/js/darle.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 </head>
 <body>
 <div class="write bsize">
@@ -52,6 +53,11 @@
         </tr>
         <%-- +버튼 만들고 누르면 더 늘어나게 name은 +1 씩 추가 나중에 하나로 합쳐서 color로 전송 --%>
         <tr>
+          <th colspan="2">
+            <button type="button" name="addColor" id="addColor" value="addColor" onclick="addInputText()"></button>
+          </th>
+        </tr>
+        <tr id="color-wrap">
           <th>색상</th>
           <td><input type="text" name="color" id="color"></td>
         </tr>

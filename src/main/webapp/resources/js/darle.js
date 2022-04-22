@@ -108,3 +108,21 @@ function categoryChange(e) {
 }
 
 /*(+) 누르면 입력창 추가*/
+// function addInputText() {
+//   // if (e.value == "addColor") {
+//     $("#addColor").on("click", () => {
+//       $(".color-wrap".clone().appendTo(".color"));
+//     });
+//   // }
+// }
+//
+// $("#addColor").on("click", () => {
+//   $(".color-wrap".clone().appendTo(".color"));
+// });
+
+function addInputText() {
+  var parent = document.getElementById('color-wrap');
+  var newTd = document.createElement('td');
+  newTd.innerHTML = "<input type='text' name='color' id='color'>";
+  parent.appendChild(newTd);
+}
